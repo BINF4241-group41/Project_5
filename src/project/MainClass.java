@@ -3,7 +3,6 @@ package project;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class MainClass {
 
     // Arguments: [boardSize (int), name1, name2, name3, name4]
@@ -17,6 +16,8 @@ public class MainClass {
         ArrayList<String> playerNames = new ArrayList<String>();
 
         Scanner myScanner = new Scanner(System.in);
+
+
         try {
             do {
                 System.out.println("Enter the number of squares of the board (must be a positive integer)");
