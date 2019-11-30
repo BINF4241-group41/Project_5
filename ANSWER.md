@@ -1,4 +1,4 @@
-#Part1
+# Part1
 
 1. I decided to Test the Game class because it's the class 'organizer' which manage the entire project.
 First of all I used @beforeAll to create the object that i need in the test and then I start to implement the test method. The first I want to test is the gamebaord components Therefore I used the "assertEquals" method to verify it.
