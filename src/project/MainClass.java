@@ -14,12 +14,12 @@ public class MainClass {
         try {
             myTest.setUpBeforeClass();
         } catch (Exception e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         myTest.testBoard();
         myTest.testDiv();
         myTest.testSquare();
+        myTest.tearDownAfterClass();
 
         //---
 

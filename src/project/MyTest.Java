@@ -23,6 +23,8 @@ class Test {
 	static void setUpBeforeClass() throws Exception {
 		
 		game= new Game(boardsize, vett);
+		first = new FirstSquare(0);
+		last= new LastSquare(0);
 	}
 
 	/**
@@ -30,6 +32,9 @@ class Test {
 	 */
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
+		game=null;
+		first=null;
+		lst=null;
 	}
 
 	/**
@@ -43,7 +48,6 @@ class Test {
 	@org.junit.jupiter.api.Test
 	void testSquare() {
 		
-		assertEquals(game.getGameBoard().getClass(),square.getClass());
 		assertEquals(game.getFirstSquare().getClass(),first.getClass());
 		assertEquals(game.getLastSquare().getClass(),last.getClass());
 		
@@ -57,7 +61,7 @@ class Test {
 	 */
 	@org.junit.jupiter.api.Test
 	void testBoard() {
-		for(int i=1;i<100;i++) {
+		for(int i=2;i<10000;i++) {
 			game= new Game(i, vett);
 			assertEquals(i,game.getBoardSize());
 		}
