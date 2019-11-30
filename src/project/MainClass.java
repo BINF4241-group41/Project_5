@@ -8,6 +8,21 @@ public class MainClass {
     // Arguments: [boardSize (int), name1, name2, name3, name4]
     public static void main(String[] args) {
 
+        //---
+        Test myTest = new Test();
+                
+        try {
+            myTest.setUpBeforeClass();
+        } catch (Exception e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        myTest.testBoard();
+        myTest.testDiv();
+        myTest.testSquare();
+
+        //---
+
         Game myGame;
         Dice myDice = new Dice();
 
