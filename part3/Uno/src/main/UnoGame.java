@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Queue;
 import java.util.Stack;
 
@@ -17,12 +19,20 @@ public class UnoGame {
         // set up game
     }
 
+    public Player currentPlayer() {
+        return new Player("placeHolder");
+    }
+
     public void skipPlayer() {
         // set to next player
     }
 
     public void changeDirection() {
         // change direction
+    }
+
+    public void addCardToCurrentPlayer() {
+        // draw card
     }
 
     public void initializeRound() {

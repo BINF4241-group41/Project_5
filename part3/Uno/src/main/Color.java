@@ -1,5 +1,7 @@
+package main;
+
 public enum Color {
-    BLUE,
+    Blue,
     Green,
     Red,
     Yellow,

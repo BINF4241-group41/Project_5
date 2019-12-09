@@ -1,7 +1,18 @@
+package main;
+
 public class WildDrawFourCard extends SpecialCard {
 
     public WildDrawFourCard(Color color) {
         // init
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.Red;
+    }
+
+    public void chooseColor(Color color) {
+        // set color
     }
 
     @Override
@@ -15,7 +26,7 @@ public class WildDrawFourCard extends SpecialCard {
     }
 
     @Override
-    public boolean canBePlayed() {
+    public boolean canBePlayed(UnoCard card) {
         return false;
     }
 }

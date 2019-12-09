@@ -1,7 +1,15 @@
-public class DrawTwoCard extends SpecialCard{
+package main;
+
+import main.Color;
+
+public class DrawTwoCard extends SpecialCard {
 
     public DrawTwoCard(Color color) {
         // init
+    }
+
+    public Color getColor() {
+        return Color.Wild;
     }
 
     @Override
@@ -15,7 +23,7 @@ public class DrawTwoCard extends SpecialCard{
     }
 
     @Override
-    public boolean canBePlayed() {
+    public boolean canBePlayed(UnoCard card) {
         return false;
     }
 }

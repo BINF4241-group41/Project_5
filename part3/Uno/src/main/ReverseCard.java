@@ -1,7 +1,14 @@
-public class SkipCard extends SpecialCard {
+package main;
 
-    public SkipCard(Color color) {
+public class ReverseCard extends SpecialCard {
+
+    public ReverseCard(Color color) {
         // init
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.Wild;
     }
 
     @Override
@@ -15,7 +22,7 @@ public class SkipCard extends SpecialCard {
     }
 
     @Override
-    public boolean canBePlayed() {
+    public boolean canBePlayed(UnoCard card) {
         return false;
     }
 }
