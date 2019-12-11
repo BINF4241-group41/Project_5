@@ -79,7 +79,7 @@ public class ReverseCardTest {
         WildCard specialComparisonCard3 = new WildCard();
         assertTrue(reverseCard.canBePlayed(specialComparisonCard2));
         assertFalse(reverseCard.canBePlayed(specialComparisonCard1));
-        assertFalse(reverseCard.canBePlayed(specialComparisonCard3));
+        assertTrue(reverseCard.canBePlayed(specialComparisonCard3));
         specialComparisonCard3.chooseColor(Color.Blue);
         assertTrue(reverseCard.canBePlayed(specialComparisonCard3));
     }
@@ -99,5 +99,6 @@ public class ReverseCardTest {
 
         assertEquals(currentPlayer, game.currentPlayer());
         assertNotEquals(nextPlayer, game.nextPlayer());
+        assertEquals(game.nextPlayer().getName(), "p3");
     }
 }

@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+/**
+ * Tests for the class SkipCard.
+ */
 public class SkipCardTest {
 
     UnoGame game;
@@ -76,7 +79,7 @@ public class SkipCardTest {
         WildCard specialComparisonCard3 = new WildCard();
         assertTrue(skipCard.canBePlayed(specialComparisonCard1));
         assertFalse(skipCard.canBePlayed(specialComparisonCard2));
-        assertFalse(skipCard.canBePlayed(specialComparisonCard3));
+        assertTrue(skipCard.canBePlayed(specialComparisonCard3));
         specialComparisonCard3.chooseColor(Color.Green);
         assertTrue(skipCard.canBePlayed(specialComparisonCard3));
     }

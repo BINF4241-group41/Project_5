@@ -20,7 +20,7 @@ public class PlayerTest {
      * Set up player for tests.
      */
     @BeforeAll
-    void setUpGPlayer() {
+    void setUpPlayer() {
         myPlayer = new Player("PlayerName");
     }
 

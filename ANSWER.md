@@ -46,6 +46,7 @@ End:
 1c.
 
 
+- The player interacts with the game by a CLI, which prints information/possible actions.
 - If the input is recognized but invalid (e.g. Yellow8 when the top card is Green6), return String "Unable to do this action! Please enter other action.".
 - If the input is malformed, return String "Input not recognized! Please enter another action.".
 - After a round is finished, return String "Current player: playerName. Top card: topCard. Available cards: card1, card2, ...". The cards are represented similar to the expected input (wildcards are of the form NameColor, with color being the selected color).

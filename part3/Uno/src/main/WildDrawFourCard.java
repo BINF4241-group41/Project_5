@@ -1,6 +1,6 @@
 package main;
 
-public class WildDrawFourCard extends SpecialCard {
+public class WildDrawFourCard extends WildCard {
 
     public WildDrawFourCard() {
         // init

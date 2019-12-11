@@ -39,9 +39,22 @@ public class UnoGame {
         // draw card
     }
 
-    public void initializeRound() {
-        // init cards
-        // set first card on discard pile
+    public void playRound() {
+        // set first card on discard pile, execute it's action
+        // play the game until winner is chosen
+    }
+
+    private boolean isValidAction(String actionString) {
+        return false;
+    }
+
+    public void nextCommand(String command) {
+        // makes testing the class easier
+    }
+
+    public UnoCard getTopCard() {
+        // returns top card on draw pile
+        return new NormalCard(Color.Blue, 7);
     }
 
     private void executeCardAction() {
@@ -50,5 +63,9 @@ public class UnoGame {
 
     private void regenerateDrawPile() {
         // take cards from discardPile, shuffle them and add them to drawPile
+    }
+
+    public Player getWinner() {
+        return winner;
     }
 }

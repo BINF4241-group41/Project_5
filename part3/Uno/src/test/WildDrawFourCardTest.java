@@ -7,7 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class WildDrawFourTest {
+/**
+ * Tests for the class WildDrawFourCard.
+ */
+public class WildDrawFourCardTest {
 
     UnoGame game;
 

@@ -82,7 +82,7 @@ class DrawTwoCardTest {
         WildCard specialComparisonCard3 = new WildCard();
         assertTrue(drawTwoCard.canBePlayed(specialComparisonCard1));
         assertTrue(drawTwoCard.canBePlayed(specialComparisonCard2));
-        assertFalse(drawTwoCard.canBePlayed(specialComparisonCard3));
+        assertTrue(drawTwoCard.canBePlayed(specialComparisonCard3));
         specialComparisonCard3.chooseColor(Color.Green);
         assertTrue(drawTwoCard.canBePlayed(specialComparisonCard3));
     }
@@ -94,19 +94,16 @@ class DrawTwoCardTest {
     @Test
     void testAction() {
         DrawTwoCard drawTwoCard = new DrawTwoCard(Color.Green);
-        Iterable<UnoCard> iterable = game.currentPlayer().getCardsIterator();
 
         int numBefore = 0;
-        for (UnoCard card: iterable) {
+        for (UnoCard card: game.currentPlayer().getCardsIterator()) {
             numBefore += 1;
         }
 
         drawTwoCard.executeAction(game);
 
-        iterable = game.currentPlayer().getCardsIterator();
-
         int numAfter = 0;
-        for (UnoCard card: iterable) {
+        for (UnoCard card: game.currentPlayer().getCardsIterator()) {
             numAfter += 1;
         }
 

@@ -69,7 +69,7 @@ class NormalCardTest {
         WildCard specialComparisonCard3 = new WildCard();
         assertTrue(normalCard.canBePlayed(specialComparisonCard1));
         assertFalse(normalCard.canBePlayed(specialComparisonCard2));
-        assertFalse(normalCard.canBePlayed(specialComparisonCard3));
+        assertTrue(normalCard.canBePlayed(specialComparisonCard3));
         specialComparisonCard3.chooseColor(Color.Red);
         assertTrue(normalCard.canBePlayed(specialComparisonCard3));
     }
