@@ -2,7 +2,7 @@ package main;
 
 public class WildDrawFourCard extends SpecialCard {
 
-    public WildDrawFourCard(Color color) {
+    public WildDrawFourCard() {
         // init
     }
 

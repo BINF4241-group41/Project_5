@@ -23,6 +23,10 @@ public class UnoGame {
         return new Player("placeHolder");
     }
 
+    public Player nextPlayer() {
+        return new Player("placeHolder");
+    }
+
     public void skipPlayer() {
         // set to next player
     }

@@ -17,7 +17,7 @@ public class WildCard extends SpecialCard {
 
     @Override
     public void executeAction(UnoGame game) {
-        // do action
+        // do nothing
     }
 
     @Override

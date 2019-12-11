@@ -26,6 +26,10 @@ public class Player {
         return cards;
     }
 
+    public String getName() {
+        return "";
+    }
+
     public void addPoints(int points) {
         // add points
     }

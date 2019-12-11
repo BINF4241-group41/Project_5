@@ -45,7 +45,7 @@ class DrawTwoCardTest {
         catch (IllegalArgumentException e) {
             return;
         }
-        fail("IllegalArgumentException expected when initializing NormalCard with invalid color.");
+        fail("IllegalArgumentException expected when initializing DrawTwoCard with invalid color.");
     }
 
     /**
@@ -81,7 +81,7 @@ class DrawTwoCardTest {
         DrawTwoCard specialComparisonCard2 = new DrawTwoCard(Color.Blue);
         WildCard specialComparisonCard3 = new WildCard();
         assertTrue(drawTwoCard.canBePlayed(specialComparisonCard1));
-        assertFalse(drawTwoCard.canBePlayed(specialComparisonCard2));
+        assertTrue(drawTwoCard.canBePlayed(specialComparisonCard2));
         assertFalse(drawTwoCard.canBePlayed(specialComparisonCard3));
         specialComparisonCard3.chooseColor(Color.Green);
         assertTrue(drawTwoCard.canBePlayed(specialComparisonCard3));
