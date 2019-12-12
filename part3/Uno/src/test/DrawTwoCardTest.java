@@ -16,6 +16,9 @@ class DrawTwoCardTest {
     UnoGame game;
 
 
+    /**
+     * Initialize a game instance to use for testing the action(s).
+     */
     @BeforeEach
     void setUpGame() {
         game = new UnoGame(new String[] {"p1", "p2", "p3"});

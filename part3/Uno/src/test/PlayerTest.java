@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * Tests the player class.
+ * Tests the Player class.
  */
 public class PlayerTest {
 
@@ -60,7 +60,7 @@ public class PlayerTest {
     }
 
     /**
-     * Test addition and removal of cards.
+     * Test addition and removal of cards (happy path test).
      */
     @Test
     void addCardTest() {
