@@ -1,7 +1,7 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +19,7 @@ public class PlayerTest {
     /**
      * Set up player for tests.
      */
-    @BeforeAll
+    @BeforeEach
     void setUpPlayer() {
         myPlayer = new Player("PlayerName");
     }
@@ -30,13 +30,13 @@ public class PlayerTest {
     @Test
     void initializationTest() {
         assertTrue(myPlayer.getName() == "PlayerName");
-        assertEquals(myPlayer.getPoints(), 0);
+        assertEquals(0, myPlayer.getPoints());
 
         int cardCount = 0;
         for (UnoCard card: myPlayer.getCardsIterator()) {
             cardCount += 1;
         }
-        assertEquals(cardCount, 0);
+        assertEquals(0, cardCount);
     }
 
     /**
@@ -46,7 +46,7 @@ public class PlayerTest {
     void pointsTest() {
         assertEquals(myPlayer.getPoints(), 0);
         myPlayer.addPoints(10);
-        assertEquals(myPlayer.getPoints(), 10);
+        assertEquals(10, myPlayer.getPoints());
     }
 
     /**
@@ -54,9 +54,9 @@ public class PlayerTest {
      */
     @Test
     void pointsNegativeTest() {
-        assertEquals(myPlayer.getPoints(), 0);
+        assertEquals(0, myPlayer.getPoints());
         myPlayer.addPoints(-10);
-        assertEquals(myPlayer.getPoints(), 0);
+        assertEquals(0, myPlayer.getPoints());
     }
 
     /**
@@ -75,7 +75,7 @@ public class PlayerTest {
             assertTrue(card.toString() == normalCard.toString() || card.toString() == specialCard.toString());
             cardCount += 1;
         }
-        assertEquals(cardCount, 2);
+        assertEquals(2, cardCount);
 
         myPlayer.removeCard(normalCard);
         myPlayer.removeCard(specialCard);
@@ -84,6 +84,6 @@ public class PlayerTest {
         for (UnoCard card: myPlayer.getCardsIterator()) {
             cardCount += 1;
         }
-        assertEquals(cardCount, 0);
+        assertEquals(0, cardCount);
     }
 }

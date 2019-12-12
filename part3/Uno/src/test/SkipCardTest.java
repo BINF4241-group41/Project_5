@@ -1,7 +1,7 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +15,7 @@ public class SkipCardTest {
     UnoGame game;
 
 
-    @BeforeAll
+    @BeforeEach
     void setUpGame() {
         game = new UnoGame(new String[] {"p1", "p2", "p3"});
     }
@@ -51,7 +51,7 @@ public class SkipCardTest {
     @Test
     void testToString() {
         SkipCard card = new SkipCard(Color.Red);
-        assertEquals(card.toString(), "RedSkip");
+        assertEquals("RedSkip", card.toString());
     }
 
     /**
@@ -97,7 +97,7 @@ public class SkipCardTest {
 
         skipCard.executeAction(game);
 
-        assertEquals(currentPlayer, game.currentPlayer());
-        assertNotEquals(nextPlayer, game.nextPlayer());
+        assertEquals(game.currentPlayer(), currentPlayer);
+        assertNotEquals(game.nextPlayer(), nextPlayer);
     }
 }

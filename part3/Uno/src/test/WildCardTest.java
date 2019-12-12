@@ -1,7 +1,7 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,7 +16,7 @@ public class WildCardTest {
     UnoGame game;
 
 
-    @BeforeAll
+    @BeforeEach
     void setUpGame() {
         game = new UnoGame(new String[] {"p1", "p2", "p3"});
     }
@@ -37,7 +37,7 @@ public class WildCardTest {
     @Test
     void testToString() {
         WildCard card = new WildCard();
-        assertEquals(card.toString(), "Wild");
+        assertEquals("Wild", card.toString());
     }
 
     /**
@@ -46,7 +46,7 @@ public class WildCardTest {
     @Test
     void testChooseColorWild() {
         WildCard card = new WildCard();
-        assertEquals(card.toString(), "Wild");
+        assertEquals("Wild", card.toString());
 
         try {
             card.chooseColor(Color.Wild);
@@ -64,9 +64,9 @@ public class WildCardTest {
     @Test
     void testChooseColor() {
         WildCard card = new WildCard();
-        assertEquals(card.toString(), "Wild");
+        assertEquals("Wild", card.toString());
         card.chooseColor(Color.Blue);
-        assertEquals(card.toString(), "Blue");
+        assertEquals("Blue", card.toString());
     }
 
     /**

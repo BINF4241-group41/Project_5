@@ -81,7 +81,7 @@ class NormalCardTest {
     void testToString() {
         NormalCard card1 = new NormalCard(Color.Blue, 0);
         NormalCard card2 = new NormalCard(Color.Green, 9);
-        assertEquals(card1.toString(), "Blue0");
-        assertEquals(card2.toString(), "Green9");
+        assertEquals("Blue0", card1.toString());
+        assertEquals("Green9", card2.toString());
     }
 }

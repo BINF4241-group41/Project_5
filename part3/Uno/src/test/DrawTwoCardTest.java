@@ -1,10 +1,8 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,7 +16,7 @@ class DrawTwoCardTest {
     UnoGame game;
 
 
-    @BeforeAll
+    @BeforeEach
     void setUpGame() {
         game = new UnoGame(new String[] {"p1", "p2", "p3"});
     }
@@ -54,7 +52,7 @@ class DrawTwoCardTest {
     @Test
     void testToString() {
         DrawTwoCard card = new DrawTwoCard(Color.Red);
-        assertEquals(card.toString(), "RedDrawTwo");
+        assertEquals("RedDrawTwo", card.toString());
     }
 
     /**

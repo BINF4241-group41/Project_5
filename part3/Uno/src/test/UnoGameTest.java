@@ -1,7 +1,7 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Array;
@@ -18,7 +18,7 @@ public class UnoGameTest {
     /**
      * Set up game for tests.
      */
-    @BeforeAll
+    @BeforeEach
     void setUpGame() {
         UnoGame myGame = new UnoGame(new String[] {"p1", "p2", "p3"});
     }
@@ -44,7 +44,7 @@ public class UnoGameTest {
             ++noOfCards;
         }
 
-        assertEquals(noOfCards, 7, "SetUp failed.");
+        assertEquals(7, noOfCards, "SetUp failed.");
 
         noOfCards = 0;
 
@@ -52,7 +52,7 @@ public class UnoGameTest {
             ++noOfCards;
         }
 
-        assertEquals(noOfCards, 7, "Incorrect number of cards after initialization.");
+        assertEquals(7, noOfCards, "Incorrect number of cards after initialization.");
     }
 
     /**
@@ -116,7 +116,7 @@ public class UnoGameTest {
             ++noOfCardsAfter;
         }
 
-        assertEquals(noOfCards + 1, noOfCardsAfter, "Incorrect number of cards after adding one.");
+        assertEquals(noOfCardsAfter, noOfCards + 1, "Incorrect number of cards after adding one.");
     }
 
     /**
@@ -135,11 +135,11 @@ public class UnoGameTest {
             myGame.nextCommand("Yellow22");
             myGame.nextCommand("Draw");
             myGame.nextCommand("Finish");
-            assertEquals(myGame.currentPlayer(), currentPlayer, "Game ended turn despite invalid commands.");
-            assertEquals(myGame.nextPlayer(), nextPlayer, "Game changed next player despite invalid commands.");
+            assertEquals(currentPlayer, myGame.currentPlayer(), "Game ended turn despite invalid commands.");
+            assertEquals(nextPlayer, myGame.nextPlayer(), "Game changed next player despite invalid commands.");
             myGame.nextCommand("!Finish");
-            assertEquals(myGame.currentPlayer(), currentPlayer, "Game ended turn despite not having done anything.");
-            assertEquals(myGame.nextPlayer(), nextPlayer, "Game changed next player despite not having done anything.");
+            assertEquals(currentPlayer, myGame.currentPlayer(), "Game ended turn despite not having done anything.");
+            assertEquals(nextPlayer, myGame.nextPlayer(), "Game changed next player despite not having done anything.");
         }
     }
 
@@ -170,7 +170,7 @@ public class UnoGameTest {
             fail("In 100 rounds the first player never had an invalid card. Most likely an error occurred.");
         }
 
-        assertNotEquals(myGame.getTopCard().toString(), invalidCard.toString(), "Game allowed invalid card to be played.");
+        assertNotEquals(invalidCard.toString(), myGame.getTopCard().toString(), "Game allowed invalid card to be played.");
     }
 
     /**
@@ -200,7 +200,7 @@ public class UnoGameTest {
             fail("In 100 rounds the first player never had a valid card. Most likely an error occurred.");
         }
 
-        assertEquals(myGame.getTopCard().toString(), playedCard.toString(), "Played card doesn't match top card of discard pile.");
+        assertEquals(playedCard.toString(), myGame.getTopCard().toString(), "Played card doesn't match top card of discard pile.");
     }
 
     /**
@@ -208,7 +208,7 @@ public class UnoGameTest {
      */
     @Test
     void testJustDrawingCard() {
-        
+
         Player nextPlayer = myGame.nextPlayer();
 
         int numBefore = 0;
@@ -224,11 +224,11 @@ public class UnoGameTest {
             numAfter += 1;
         }
 
-        assertEquals(numBefore + 1, numAfter);
+        assertEquals(numAfter, numBefore + 1);
 
         myGame.nextCommand("!Finish");
 
-        assertEquals(myGame.currentPlayer(), nextPlayer);
+        assertEquals(nextPlayer, myGame.currentPlayer());
     }
 
     /**
@@ -258,7 +258,7 @@ public class UnoGameTest {
             fail("In 200 rounds the first player never had a valid special card (excluding wild cards). Most likely an error occurred.");
         }
 
-        assertEquals(myGame.getTopCard().toString(), playedCard.toString(), "Played card doesn't match top card of discard pile.");
+        assertEquals(playedCard.toString(), myGame.getTopCard().toString(), "Played card doesn't match top card of discard pile.");
     }
 
     /**
@@ -311,12 +311,12 @@ public class UnoGameTest {
                 myGame.nextCommand("!Finish");
 
                 if (!(playedCard instanceof ReverseCard) || !(playedCard instanceof SkipCard)) {
-                    assertEquals(myGame.currentPlayer(), nextPlayer, "Turn not correctly finished.");
+                    assertEquals(nextPlayer, myGame.currentPlayer(), "Turn not correctly finished.");
                 } else {
-                    assertNotEquals(myGame.currentPlayer(), nextPlayer, "Turn not correctly finished.");
+                    assertNotEquals(nextPlayer, myGame.currentPlayer(), "Turn not correctly finished.");
                 }
 
-                assertEquals(myGame.getTopCard().toString(), playedCard.toString(), "Played card doesn't match top card of discard pile.");
+                assertEquals(playedCard.toString(), myGame.getTopCard().toString(), "Played card doesn't match top card of discard pile.");
             }
         }
     }

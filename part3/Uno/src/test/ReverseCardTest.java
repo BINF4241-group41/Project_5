@@ -1,7 +1,7 @@
 package test;
 
 import main.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +15,7 @@ public class ReverseCardTest {
     UnoGame game;
 
 
-    @BeforeAll
+    @BeforeEach
     void setUpGame() {
         game = new UnoGame(new String[] {"p1", "p2", "p3"});
     }
@@ -51,7 +51,7 @@ public class ReverseCardTest {
     @Test
     void testToString() {
         ReverseCard card = new ReverseCard(Color.Red);
-        assertEquals(card.toString(), "RedReverse");
+        assertEquals("RedReverse", card.toString());
     }
 
     /**
@@ -97,8 +97,8 @@ public class ReverseCardTest {
 
         reverseCard.executeAction(game);
 
-        assertEquals(currentPlayer, game.currentPlayer());
-        assertNotEquals(nextPlayer, game.nextPlayer());
-        assertEquals(game.nextPlayer().getName(), "p3");
+        assertEquals(game.currentPlayer(), currentPlayer);
+        assertNotEquals(game.nextPlayer(), nextPlayer);
+        assertEquals("p3", game.nextPlayer().getName());
     }
 }
